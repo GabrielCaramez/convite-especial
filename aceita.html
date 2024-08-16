@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aceitou</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="formulario.js">
+</head>
+
+<body>
+    <div class="container">
+        <section class="section section-sm section-first bg-default">
+            <div class="container" id="caminho_href">
+                <h3 class="heading-3" id="color_text">Agende sua Avaliação</h3>
+                <form class="rd-form rd-mailform form-style-1" id="cadastro" data-form-output="form-output-global"
+                    data-form-type="contact">
+                    <div class="row row-20 gutters-20">
+                        <div class="col-md-6 col-lg-4 oh-desktop">
+                            <div class="form-wrap">
+                                <input class="form-input" id="nome" type="text" name="name" required>
+                                <label class="form-label" for="nome">Nome*</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-wrap">
+                                <label class="form-label" for="message">Mensagem</label>
+                                <textarea class="form-input textarea-lg" id="message" name="message"
+                                    required></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group-custom-1 group-middle oh-desktop">
+                        <button class="button button-lg button-primary button-winona" type="submit">Enviar
+                            Mensagem</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+
+
+    <script>
+
+        document.getElementById('cadastro').addEventListener('submit', function (e) {
+            e.preventDefault();
+            // Coletar valores do formulário 
+            var nome = encodeURIComponent(document.getElementById('nome').value);
+            var message = encodeURIComponent(document.getElementById('message').value);
+            // Número de telefone no formato internacional
+            var numeroWhatsApp = '5561996934460';
+            // Substitua pelo número desejado
+            // Construir mensagem 
+            var texto = `Nome: ${nome}%0AMensagem: ${message}`;
+            // URL do WhatsApp 
+            var url = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${texto}`;
+            // Redirecionar para WhatsApp
+            window.location.href = url;
+        });
+
+    </script>
+</body>
+
+</html>
