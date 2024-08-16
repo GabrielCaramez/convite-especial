@@ -12,6 +12,7 @@ body {
 }
 
 .container {
+
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -19,6 +20,21 @@ body {
     width: 100%;
     padding: 20px;
     text-align: center;
+    
+}
+
+.container2 {
+    background-image: url('images/pipoca.png'); /* Certifique-se de que o caminho está correto */
+    background-color: #fff;
+    background-size:20%; /* Ajusta a imagem para cobrir todo o contêiner */
+    background-position: right top; /* Centraliza a imagem no contêiner */
+    background-repeat: no-repeat; /* Impede a repetição da imagem */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 100%;
+    padding: 20px;
+    text-align: center; 
 }
 
 h1 {
@@ -47,4 +63,9 @@ p {
 
 .button:hover {
     background-color: #ff4a4a;
+}
+.form-label{
+    color: #333;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
 }
